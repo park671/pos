@@ -3,10 +3,17 @@ SECTIONS
 {
     . = 0x40000000;
     .startup . : {start.o(.text)}
-    .text :{*(.text)}
-    .data :{*(.data)}
-    .bss :{*(.bss COMMON)}
     . = ALIGN(8);
+    .text :{*(.text)}
+    . = ALIGN(8);
+    .data :{*(.data)}
+    . = ALIGN(8);
+    .rodata :{*(.rodata)}
+    . = ALIGN(8);
+    bss_start = .;
+    .bss :{*(.bss)}
+    . = ALIGN(8);
+    bss_end = .;
     . = . + 0x1000;
     stack_top = .;
 }

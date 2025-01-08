@@ -5,10 +5,14 @@ _start:
     mov x29, #0
     mov x30, #0
 
+    //init ctrl flags
+    mrs x0, SCTLR_EL1
+    orr x0, x0, #0x6
+    msr SCTLR_EL1, x0
+
     //enable fp & simd
-    mrs x0, cpacr_el1
-    orr x0, x0, #0x30000000
-    msr cpacr_el1, x0
+    mov x0, #0x23330000
+    msr CPACR_EL1, x0
 
     //memset(bss, 0, sizeof(bss));
     sub sp, sp, #24

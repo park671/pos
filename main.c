@@ -1,4 +1,4 @@
-#include "uart.h"
+#include "uart_printf.h"
 
 //use for test .bss
 int x;
@@ -9,9 +9,11 @@ int b;
 int c;
 
 void main() {
-    uart_printf("park hello world!\n\r");
+    uart_put_char('a');
+    fail_uart_printf("park hello world!\n\r");
 }
 
 void on_bss_fill() {
-    uart_printf(".bss fill 8byte\n\r");
+    uart_put_char('b');
+    fail_uart_printf(".bss fill %dbyte\n\r", 8);
 }

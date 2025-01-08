@@ -14,6 +14,6 @@ SECTIONS
     .bss :{*(.bss)}
     . = ALIGN(8);
     bss_end = .;
-    . = . + 0x1000;
+    . = . + 0x4000;
     stack_top = .;
 }

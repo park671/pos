@@ -2,7 +2,7 @@ ENTRY(_start)
 SECTIONS
 {
     . = 0x40080000;
-    .startup . : {start.o(.text)}
+    .startup . : {*/_start.o(.text)}
     . = ALIGN(8);
     .text :{*(.text)}
     . = ALIGN(8);

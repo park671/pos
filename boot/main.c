@@ -1,4 +1,4 @@
-#include "uart.h"
+#include "../uart/uart.h"
 
 //use for test .bss
 int x;
@@ -11,7 +11,7 @@ int c;
 void main() {
     simple_puts("[+]main() start\n\r\0");
     simple_printf("park hello world!\n\r\0");
-    simple_printf("simple test %d\n\r\0", 8);
+    simple_printf("simple test %d %d\n\r\0", 8, 12);
     simple_puts("[+]main() finish\n\r\0");
 }
 

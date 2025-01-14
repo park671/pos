@@ -1,7 +1,7 @@
 ENTRY(_start)
 SECTIONS
 {
-    . = 0x40000000;
+    . = 0x40080000;
     .startup . : {start.o(.text)}
     . = ALIGN(8);
     .text :{*(.text)}
@@ -15,5 +15,6 @@ SECTIONS
     . = ALIGN(8);
     bss_end = .;
     . = . + 0x4000;
+    . = ALIGN(16);
     stack_top = .;
 }

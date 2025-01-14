@@ -14,6 +14,11 @@ _start:
     mov x0, #0x23330000
     msr CPACR_EL1, x0
 
+    //sync all system register
+    isb
+    //sync all memory op
+    dmb	sy
+
     //memset(bss, 0, sizeof(bss));
     sub sp, sp, #24
     ldr x0, =bss_start

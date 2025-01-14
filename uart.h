@@ -1,7 +1,8 @@
 #ifndef UART
 #define UART
 
-void uart_puts(const char *);
-void uart_put_char(const char);
+void simple_printf(const char *format, ...);
+void simple_puts(const char *msg);
+void simple_put_char(const char data);
 
 #endif
